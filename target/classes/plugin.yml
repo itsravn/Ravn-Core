@@ -1,0 +1,11 @@
+name: RavnCore
+version: 1.0.0
+main: dev.ravn.core.RavnCore
+api-version: 1.20
+description: High-performance backbone for next-gen networks.
+authors: [RavnTeam]
+website: https://ravn.dev
+permissions:
+  ravn.admin:
+    description: Grants full access to Ravn-Core commands
+    default: op
