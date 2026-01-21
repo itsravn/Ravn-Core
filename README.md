@@ -1,56 +1,34 @@
-# RAVN-CORE
-### *The High-Performance Backbone for Next-Gen Networks*
+# 🦅 Ravn-Core
+
+![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-3.8%2B-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-Pub%2FSub-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![License](https://img.shields.io/badge/License-Proprietary-blue?style=for-the-badge)
+
+> **The industrial-grade backbone for next-generation Minecraft networks.**
+
+**Ravn-Core** is not just a library; it's a comprehensive architectural framework designed to handle high-concurrency data streams across distributed server networks. Built to eliminate main-thread bottlenecks through aggressive asynchronous processing.
+
+### ⚡ Technical Architecture
+* **Reactive Database Layer:** Non-blocking SQL implementation utilizing **HikariCP** for connection pooling.
+* **Cross-Server Sync:** Real-time data synchronization and messaging via **Redis Pub/Sub** (Jedis).
+* **Packet-Level Optimization:** Custom packet injection and handling for NMS-independent operations.
+* **Fluent API:** Streamlined builders for ItemStacks, GUIs (Inventory), and NBT manipulation.
 
 ---
 
-> "Efficiency is the currency of the future. Spend it wisely."
+### 📦 Installation (Maven)
+Ravn-Core is hosted on our private nexus. To use it in your project:
 
-**Ravn-Core** is a production-grade infrastructure library designed for high-throughput Spigot and PaperMC environments. Built for scalability, it seamlessly integrates standardized database handling, high-speed caching, and robust utilities into a single, cohesive framework.
-
----
-
-## ⚡ System Modules
-
-### 1. Database Architecture (`dev.ravn.core.database`)
-- **Engine**: HikariCP Connection Pooling
-- **Capabilities**: Async execution, MySQL/SQLite support, Auto-reconnection.
-- **Performance**: Optimized prepared statements and caching.
-
-### 2. High-Speed Cache (`dev.ravn.core.redis`)
-- **Engine**: Jedis (Redis)
-- **Capabilities**: Thread-safe pool, Real-time Pub/Sub functionality.
-- **Architecture**: Low-latency data synchronization across network nodes.
-
-### 3. Utility Suite (`dev.ravn.core.utils`)
-- **ItemBuilder**: Fluent API for rapid `ItemStack` construction.
-- **ColorUtil**: Full RGB/Hex support (`&#RRGGBB`) with legacy fallback.
-- **ConfigManager**: Secure, resilient YAML configuration handling.
-
----
-
-## 🛠️ Installation & Usage
-
-**Maven Dependency:**
 ```xml
+<repository>
+    <id>ravn-repo</id>
+    <url>[https://repo.ravn.dev/releases](https://repo.ravn.dev/releases)</url>
+</repository>
+
 <dependency>
     <groupId>dev.ravn</groupId>
     <artifactId>ravn-core</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-STABLE</version>
+    <scope>provided</scope>
 </dependency>
-```
-
-**Initialization:**
-```java
-public class MyPlugin extends JavaPlugin {
-    @Override
-    public void onEnable() {
-        // Initialize Core Systems
-        RavnCore.getInstance().getDatabaseManager().initialize(...);
-        RavnCore.getInstance().getRedisManager().initialize(...);
-    }
-}
-```
-
----
-
-*© 2026 Ravn Industries. All systems nominal.*
